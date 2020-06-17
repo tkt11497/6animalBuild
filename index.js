@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const PORT = process.env.PORT || 5000
 
 app.use('/', express.static(path.join(__dirname, 'web')))
 
@@ -9,6 +10,6 @@ app.get('/', (req, res) => {
 });
 
 
-app.listen('5000',()=>{
-    console.log('lesing on 8000')
+app.listen(PORT,()=>{
+    console.log(`lesing on ${PORT}`)
 });
